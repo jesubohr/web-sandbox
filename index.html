@@ -9,7 +9,25 @@
 </head>
 
 <body>
-   <main id="app"></main>
+   <main id="app">
+      <header>
+         <p class="title">New Project - Web Sandbox</p>
+      </header>
+      <section class="sandbox">
+         <div>
+            <textarea name="html" id="sandbox-html" placeholder="<!-- Write some code... -->"></textarea>
+         </div>
+         <div>
+            <textarea name="css" id="sandbox-css" placeholder="/* Write some code... */"></textarea>
+         </div>
+         <div>
+            <textarea name="js" id="sandbox-js" placeholder="// Write some code..."></textarea>
+         </div>
+         <div>
+            <iframe id="sandbox-preview" srcdoc="Here goes preview" frameborder="0"></iframe>
+         </div>
+      </section>
+   </main>
    <script type="module" src="/main.js"></script>
 </body>
 
