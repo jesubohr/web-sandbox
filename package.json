@@ -8,5 +8,8 @@
    },
    "devDependencies": {
       "vite": "^2.7.12"
+   },
+   "dependencies": {
+      "split-grid": "^1.0.11"
    }
 }

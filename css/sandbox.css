@@ -1,8 +1,28 @@
 .sandbox {
    display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
+   grid-template-rows: 1fr 6px 1fr;
    height: calc(100vh - 30px);
+}
+
+.horizontal {
+   display: grid;
+   grid-template-columns: 1fr 6px 1fr;
+}
+
+.splitter {
+   background-color: #282848;
+}
+
+.splitter:hover {
+   background-color: #212141;
+}
+
+.splitter.row {
+   cursor: row-resize;
+}
+
+.splitter.col {
+   cursor: col-resize;
 }
 
 textarea {

@@ -1,6 +1,6 @@
+import createSplits from './src/split.js';
+import $ from './src/utils.js';
 import './style.css';
-
-const $ = (selector) => document.querySelector(selector);
 
 const PREVIEW = $('#sandbox-preview');
 const htmlCode = $('#sandbox-html');
@@ -44,3 +44,5 @@ function createDOC (HTML, CSS, JS) {
    </html>
    `;
 }
+
+createSplits();

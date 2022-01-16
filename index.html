@@ -22,17 +22,24 @@
          <p class="title"><span id="project-name">New Project</span> - Web Sandbox</p>
       </header>
       <section class="sandbox">
-         <div>
-            <textarea name="html" id="sandbox-html" placeholder="<!-- Write some code... -->"></textarea>
+         <div class="horizontal">
+            <div>
+               <textarea name="html" id="sandbox-html" placeholder="<!-- Write some code... -->"></textarea>
+            </div>
+            <div class="splitter col col-1"></div>
+            <div>
+               <textarea name="css" id="sandbox-css" placeholder="/* Write some code... */"></textarea>
+            </div>
          </div>
-         <div>
-            <textarea name="css" id="sandbox-css" placeholder="/* Write some code... */"></textarea>
-         </div>
-         <div>
-            <textarea name="js" id="sandbox-js" placeholder="// Write some code..."></textarea>
-         </div>
-         <div>
-            <iframe id="sandbox-preview" srcdoc="Here goes preview" frameborder="0"></iframe>
+         <div class="splitter row"></div>
+         <div class="horizontal">
+            <div>
+               <textarea name="js" id="sandbox-js" placeholder="// Write some code..."></textarea>
+            </div>
+            <div class="splitter col col-2"></div>
+            <div>
+               <iframe id="sandbox-preview" srcdoc="Here goes preview" frameborder="0"></iframe>
+            </div>
          </div>
       </section>
    </main>
