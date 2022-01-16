@@ -1,3 +1,4 @@
+import { encode, decode } from 'js-base64';
 import createSplits from './src/split.js';
 import { $, handleChange } from './src/utils.js';
 import './style.css';
@@ -18,6 +19,9 @@ function updatePreview () {
 
    const DOC = createDOC(HTML, CSS, JS);
    PREVIEW.setAttribute('srcdoc', DOC);
+
+   const hashedCode = `${encode(HTML)}|${encode(CSS)}|${encode(JS)}`;
+   window.history.replaceState(null, null, `/${hashedCode}`);
 }
 
 function createDOC (HTML, CSS, JS) {
@@ -45,4 +49,19 @@ function createDOC (HTML, CSS, JS) {
    `;
 }
 
+function initSandbox () {
+   const codeFromURL = document.location.pathname.substring(1) || '%7C%7C';
+   const codeFromLocal = window.localStorage.getItem('WEB-SANDBOX-CODE') ?? '';
+
+   const hashedCode = (codeFromLocal !== '') ? codeFromLocal : codeFromURL;
+   const [HTML, CSS, JS] = hashedCode.split('%7C').map(encoded => decode(encoded));
+
+   htmlCode.value = HTML;
+   cssCode.value = CSS;
+   jsCode.value = JS;
+
+   updatePreview();
+}
+
 createSplits();
+initSandbox();

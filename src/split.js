@@ -1,5 +1,5 @@
 import Split from "split-grid";
-import $ from './utils.js';
+import { $ } from './utils.js';
 
 const createSplits = () => Split({
    columnGutters: [{
