@@ -50,3 +50,8 @@ nav ul > li {
 nav ul > li:hover {
    background-color: #30305f;
 }
+
+nav ul > li:focus {
+   background-color: #30305f;
+   outline: 1px solid #fff8;
+}
