@@ -1,5 +1,5 @@
 import createSplits from './src/split.js';
-import $ from './src/utils.js';
+import { $, handleChange } from './src/utils.js';
 import './style.css';
 
 const PREVIEW = $('#sandbox-preview');
@@ -7,9 +7,9 @@ const htmlCode = $('#sandbox-html');
 const cssCode = $('#sandbox-css');
 const jsCode = $('#sandbox-js');
 
-htmlCode.addEventListener('input', updatePreview);
-cssCode.addEventListener('input', updatePreview);
-jsCode.addEventListener('input', updatePreview);
+htmlCode.addEventListener('input', handleChange(updatePreview));
+cssCode.addEventListener('input', handleChange(updatePreview));
+jsCode.addEventListener('input', handleChange(updatePreview));
 
 function updatePreview () {
    const HTML = htmlCode.value;
