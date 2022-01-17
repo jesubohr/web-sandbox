@@ -9,6 +9,10 @@
    grid-template-columns: 1fr 6px 1fr;
 }
 
+.horizontal div {
+   min-width: 0px;
+}
+
 .splitter {
    background-color: #282848;
 }

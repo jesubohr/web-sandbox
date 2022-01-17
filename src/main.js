@@ -1,6 +1,5 @@
 import { encode, decode } from 'js-base64';
-import createSplits from './src/split.js';
-import { $, handleChange } from './src/utils.js';
+import { $, handleChange, createSplits } from './utils/index';
 import './style.css';
 
 const PREVIEW = $('#sandbox-preview');

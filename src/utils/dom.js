@@ -7,6 +7,7 @@ function debounce (func, timeout = 1000) {
 }
 
 const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 const handleChange = (func) => debounce(() => func());
 
-export { $, handleChange };
+export { $, $$, handleChange };
