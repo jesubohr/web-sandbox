@@ -11,6 +11,7 @@ header .title {
    padding-left: 10.5%;
    width: 70%;
    text-align: left;
+   cursor: default;
 }
 
 nav {
@@ -19,9 +20,11 @@ nav {
    align-items: center;
    width: 30%;
    height: 100%;
+   z-index: 1;
 }
 
 nav .icon {
+   appearance: none;
    padding: 0 1.2rem;
    width: 20px;
    height: 20px;
@@ -54,4 +57,55 @@ nav ul > li:hover {
 nav ul > li:focus {
    background-color: #30305f;
    outline: 1px solid #fff8;
+}
+
+@media screen and (max-width: 700px){
+   header {
+      justify-content: space-between;
+   }
+
+   header .title {
+      margin-right: 10%;
+      padding-left: 0;
+      text-align: center;
+   }
+}
+
+@media screen and (max-width: 550px){
+   header {
+      justify-content: flex-start;
+   }
+
+   header .title {
+      margin-right: 0;
+   }
+
+   nav {
+      width: 15%;
+   }
+
+   nav ul {
+      position: absolute;
+      top: 30px;
+      left: 0.6rem;
+      flex-direction: column;
+      padding: 5px 2px;
+      width: 0;
+      height: 15%;
+      background-color: #222244;
+      opacity: 0;
+      pointer-events: none;
+   }
+
+   nav ul > li {
+      padding: 0.4rem 1.5rem;
+      width: 100%;
+      height: auto;
+   }
+
+   nav .icon:checked ~ ul {
+      width: 40%;
+      opacity: 1;
+      pointer-events: all;
+   }
 }
