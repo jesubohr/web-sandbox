@@ -7,7 +7,6 @@
 
 .horizontal {
    display: grid;
-   grid-template-columns: 1fr 6px 1fr;
    min-height: 0px;
 }
 
@@ -35,6 +34,7 @@
 textarea {
    padding: 0.5rem 1rem;
    min-width: 0px;
+   min-height: 0px;
    width: 100%;
    height: 100%;
    color: #eee;
@@ -75,11 +75,6 @@ iframe {
 @media screen and (max-width: 550px){
    .sandbox {
       overflow-y: auto;
-   }
-
-   .horizontal {
-      grid-template-columns: none;
-      grid-template-rows: 1fr 6px 1fr;
    }
 
    .splitter.col {

@@ -1,5 +1,5 @@
 import { encode, decode } from 'js-base64';
-import { $, handleChange, createSplits } from './utils/index';
+import { $, handleChange, initSplit } from './utils/index';
 import './style.css';
 
 const PREVIEW = $('#sandbox-preview');
@@ -62,5 +62,5 @@ function initSandbox () {
    updatePreview();
 }
 
-createSplits();
+initSplit();
 initSandbox();

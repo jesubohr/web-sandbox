@@ -1,2 +1,2 @@
-export { default as createSplits } from './split';
+export { default as initSplit } from './split';
 export { $, $$, handleChange } from './dom';
