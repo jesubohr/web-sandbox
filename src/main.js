@@ -1,21 +1,15 @@
 import { encode, decode } from 'js-base64';
-import { $, handleChange, initSplit } from './utils';
+import { $, initSplit } from './utils';
 import initOptions from './options';
+import { htmlEditor, cssEditor, jsEditor, editorOnChange } from './editors';
 import './style.css';
 
 const PREVIEW = $('#sandbox-preview');
-const htmlCode = $('#sandbox-html');
-const cssCode = $('#sandbox-css');
-const jsCode = $('#sandbox-js');
-
-htmlCode.addEventListener('input', handleChange(updatePreview));
-cssCode.addEventListener('input', handleChange(updatePreview));
-jsCode.addEventListener('input', handleChange(updatePreview));
 
 function updatePreview () {
-   const HTML = htmlCode.value;
-   const CSS = cssCode.value;
-   const JS = jsCode.value;
+   const HTML = htmlEditor.getValue();
+   const CSS = cssEditor.getValue();
+   const JS = jsEditor.getValue();
 
    const DOC = createDOC(HTML, CSS, JS);
    PREVIEW.setAttribute('srcdoc', DOC);
@@ -56,13 +50,14 @@ function initSandbox () {
    const hashedCode = (codeFromURL === '%7C%7C') ? codeFromLocal : codeFromURL;
    const [HTML, CSS, JS] = hashedCode.split('%7C').map(encoded => decode(encoded));
 
-   htmlCode.value = HTML;
-   cssCode.value = CSS;
-   jsCode.value = JS;
+   htmlEditor.setValue(HTML);
+   cssEditor.setValue(CSS);
+   jsEditor.setValue(JS);
 
    updatePreview();
 }
 
+editorOnChange(updatePreview);
 initSplit();
 initOptions();
 initSandbox();

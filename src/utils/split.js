@@ -37,7 +37,7 @@ function manageSplits () {
 
       horizontal.forEach(el => {
          el.style['grid-template-columns'] = 'none';
-         el.style['grid-template-rows'] = '1fr 6px 1fr';
+         el.style['grid-template-rows'] = '49.7% 6px 49.7%';
       });
       SPLIT = createSplit(true);
    }
@@ -47,7 +47,7 @@ function manageSplits () {
 
       horizontal.forEach(el => {
          el.style['grid-template-rows'] = 'none';
-         el.style['grid-template-columns'] = '1fr 6px 1fr';
+         el.style['grid-template-columns'] = '49.7% 6px 49.7%';
       });
       SPLIT = createSplit();
    }
