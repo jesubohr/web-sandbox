@@ -1,5 +1,6 @@
 import { encode, decode } from 'js-base64';
-import { $, handleChange, initSplit } from './utils/index';
+import { $, handleChange, initSplit } from './utils';
+import initOptions from './options';
 import './style.css';
 
 const PREVIEW = $('#sandbox-preview');
@@ -50,9 +51,9 @@ function createDOC (HTML, CSS, JS) {
 
 function initSandbox () {
    const codeFromURL = document.location.pathname.substring(1) || '%7C%7C';
-   const codeFromLocal = window.localStorage.getItem('WEB-SANDBOX-CODE') ?? '';
+   const codeFromLocal = window.localStorage.getItem('WEB-SANDBOX-CODE') || '%7C%7C';
 
-   const hashedCode = (codeFromLocal !== '') ? codeFromLocal : codeFromURL;
+   const hashedCode = (codeFromURL === '%7C%7C') ? codeFromLocal : codeFromURL;
    const [HTML, CSS, JS] = hashedCode.split('%7C').map(encoded => decode(encoded));
 
    htmlCode.value = HTML;
@@ -63,4 +64,5 @@ function initSandbox () {
 }
 
 initSplit();
+initOptions();
 initSandbox();
