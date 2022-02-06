@@ -6,7 +6,8 @@ const jsContainer = $('#sandbox-js');
 
 const EDITOR_OPTIONS = {
    theme: 'vs-dark',
-   fontSize: 16,
+   fontFamily: 'monospace',
+   fontSize: 18,
    automaticLayout: true,
    minimap: {
       enabled: false

@@ -4,29 +4,27 @@
    height: calc(100vh - 30px);
    overflow-y: hidden;
 }
-
 .horizontal {
    display: grid;
    min-height: 0px;
 }
-
 .horizontal div {
    min-width: 0px;
    min-height: 0px;
 }
 
 .splitter {
-   background-color: #282848;
-}
-
-.splitter:hover {
    background-color: #212141;
 }
-
+.splitter:hover {
+   background-color: #191939;
+}
+.splitter:active {
+   background-color: #191939;
+}
 .splitter.row {
    cursor: row-resize;
 }
-
 .splitter.col {
    cursor: col-resize;
 }
@@ -36,7 +34,6 @@
    width: 100%;
    height: 100%;
 }
-
 .editor::after {
    content: '';
    position: absolute;
@@ -46,22 +43,22 @@
    height: 2.2rem;
    background-repeat: no-repeat;
 }
-
-.editor:focus {
-   box-shadow: inset 0px 0px 5px #5d5b88;
-   outline: none;
-}
-
 #sandbox-html::after {
    background-image: url('/assets/HTML.svg');
 }
-
 #sandbox-css::after {
    background-image: url('/assets/CSS.svg');
 }
-
 #sandbox-js::after {
    background-image: url('/assets/JS.svg');
+}
+
+.monaco-editor-background {
+   background-color: #2d2b55;
+}
+.monaco-editor .margin {
+   background-color: #2b2950;
+   border-right: 1px solid #336;
 }
 
 iframe {
